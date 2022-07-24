@@ -66,6 +66,7 @@ def sign_digest(filename):
     try:
         print(f"Original data bytes length: {len(file_data)} bytes")
         print(f"Signed message digest length: {len(signature)} bytes")
+        print("Signed bytes: " + base64.b64encode(signature).decode("utf8"))
     except:
         print("Task 3-7 not implemented")
 

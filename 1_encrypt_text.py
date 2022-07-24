@@ -1,5 +1,6 @@
 # Encrypt and Decrypt Text File
 import base64
+from email.contentmanager import raw_data_manager
 import shutil
 import os
 from cryptography.fernet import Fernet
@@ -39,7 +40,7 @@ def enc_text(input_filename, output_filename):
         with open(output_filename, "w") as fp:
             fp.write(encrypted_text)
 
-        print(f"Original byte length: {len(raw_bytes.decode('utf8'))}")
+        print(f"Original byte length: {len(raw_bytes)}")
         print(f"Encrypted byte length: {len(encrypted_bytes)}")
         print()
     except:

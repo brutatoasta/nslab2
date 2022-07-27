@@ -7,6 +7,7 @@ from cryptography.fernet import Fernet
 
 # Generate a Fernet key
 # TODO: Task 1-1
+key = Fernet.generate_key()
 
 # Prepare output destination
 try:
@@ -22,6 +23,7 @@ def enc_text(input_filename, output_filename):
     """
     # Generate a cipher
     # TODO: Task 1-2
+    session_key = Fernet(key)
 
     # Open the file, read as bytes
     with open(input_filename, "rb") as fp:
@@ -29,7 +31,7 @@ def enc_text(input_filename, output_filename):
 
     # Encrypt the raw bytes
     # TODO: Task 1-3
-    encrypted_bytes = None
+    encrypted_bytes = session_key.encrypt(raw_bytes)
 
     try:
         # Convert the ciphertext output to a printable string
@@ -53,7 +55,7 @@ def dec_text(input_filename, output_filename):
     """
     # Generate a cipher from key (same as above in enc_text)
     # TODO: Task 1-2
-
+    session_key = Fernet(key)
     try:
         # Open the file containing the cyphertext, read as string
         with open(input_filename, "r") as fp:
@@ -69,7 +71,7 @@ def dec_text(input_filename, output_filename):
 
     # Decrypt the cipher bytes
     # TODO: Task 1-4
-    decrypted_bytes = None
+    decrypted_bytes = session_key.decrypt(encrypted_bytes)
 
     try:
         # Convert the decrypted bytes to printable text

@@ -136,62 +136,13 @@ def enc_img(input_filename, output_filename, cbc, top_down=False):
 
 
 if __name__ == "__main__":
-    ##### SUTD #####
+    ##### sample #####
     # ECB
     enc_img(
-        "original_files/SUTD.bmp",
-        "output/enc_bottom_up_ecb_SUTD.bmp",
+        
+        "original_files/sample_640×426.bmp",
+        "output/enc_bottom_up_ecb_sample.bmp",
         False,
         False,
     )
-    enc_img(
-        "original_files/SUTD.bmp",
-        "output/enc_top_down_ecb_SUTD.bmp",
-        False,
-        True,
-    )
-
-    # # CBC
-    enc_img(
-        "original_files/SUTD.bmp",
-        "output/enc_bottom_up_cbc_SUTD.bmp",
-        True,
-        False,
-    )
-    enc_img(
-        "original_files/SUTD.bmp",
-        "output/enc_top_down_cbc_SUTD.bmp",
-        True,
-        True,
-    )
-    # ################
-
-    # ### TODO: TRIANGLE ###
-    # # ECB
-    enc_img(
-        "original_files/triangle.bmp",
-        "output/enc_bottom_up_ecb_triangle.bmp",
-        False,
-        False,
-    )
-    enc_img(
-        "original_files/triangle.bmp",
-        "output/enc_top_down_ecb_triangle.bmp",
-        False,
-        True,
-    )
-
-    # # CBC
-    enc_img(
-        "original_files/triangle.bmp",
-        "output/enc_bottom_up_cbc_triangle.bmp",
-        True,
-        False,
-    )
-    enc_img(
-        "original_files/triangle.bmp",
-        "output/enc_top_down_cbc_triangle.bmp",
-        True,
-        True,
-    )
-    ################
+    
